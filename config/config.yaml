@@ -26,10 +26,12 @@ follow:
     - name: "秋叶aaaki"
       uid: 12566101
 
-  # RSS 博客 / 新闻
+  # RSS 博客 / 新闻（中文科技源）
   rss:
-    - name: "Hacker News"
-      url: "https://hnrss.org/frontpage?count=20"
+    - name: "机器之心"
+      url: "https://www.jiqizhixin.com/rss"
+    - name: "量子位"
+      url: "https://www.qbitai.com/feed"
     - name: "36氪"
       url: "https://36kr.com/feed"
 
@@ -53,7 +55,7 @@ ai:
   model: "deepseek-chat"
   api_key: "${DEEPSEEK_API_KEY}"
   api_base: "https://api.deepseek.com"
-  timeout: 120
+  timeout: 180
 
 # ─── 通知配置 ─────────────────────────────────────────────────
 notification:
