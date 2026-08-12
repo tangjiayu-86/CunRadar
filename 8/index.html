@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CunRadar Daily - 你的个人互联网信息雷达，AI 自动追踪 YouTube、B站、博客和 GitHub 更新。">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<title>CunRadar Daily - 2026-08-12</title>
+<style>
+  :root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --border: #334155;
+    --fg: #e2e8f0;
+    --fg-dim: #94a3b8;
+    --accent: #38bdf8;
+    --accent-glow: rgba(56, 189, 248, 0.15);
+    --green: #4ade80;
+    --yellow: #fbbf24;
+    --radius: 12px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 "Noto Sans SC", sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  .container { max-width: 800px; margin: 0 auto; padding: 24px 16px; }
+  .header {
+    text-align: center;
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 32px;
+  }
+  .header .logo {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .header .date {
+    color: var(--fg-dim);
+    font-size: 1.1rem;
+    margin-top: 8px;
+  }
+  .header .summary {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: var(--fg-dim);
+  }
+  .header .summary span { color: var(--accent); font-weight: 600; }
+  .section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 20px;
+  }
+  .section h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section h2 .count {
+    display: inline-block;
+    background: var(--accent-glow);
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 1px 10px;
+    border-radius: 20px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .empty-state {
+    text-align: center;
+    color: var(--fg-dim);
+    font-size: 0.9rem;
+    padding: 24px 0;
+  }
+  .item {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+  }
+  .item:last-child { border-bottom: none; }
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .item-title {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  .item-title:hover { text-decoration: underline; }
+  .time {
+    color: var(--fg-dim);
+    font-size: 0.8rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .meta {
+    color: var(--fg-dim);
+    font-size: 0.8rem;
+    margin-top: 4px;
+  }
+  .desc {
+    color: var(--fg-dim);
+    font-size: 0.85rem;
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+  .digest {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 20px;
+    line-height: 1.8;
+  }
+  .digest h2, .digest h3 {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    color: var(--yellow);
+  }
+  .digest h2:first-child, .digest h3:first-child { margin-top: 0; }
+  .digest p { margin-bottom: 8px; color: var(--fg); }
+  .digest li {
+    margin-left: 20px;
+    margin-bottom: 4px;
+    color: var(--fg);
+  }
+  .footer {
+    text-align: center;
+    color: var(--fg-dim);
+    font-size: 0.8rem;
+    padding: 32px 0;
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+  }
+  .footer a { color: var(--accent); text-decoration: none; }
+  @media (max-width: 600px) {
+    .container { padding: 16px 12px; }
+    .header { padding: 32px 0 24px; }
+    .header h1 { font-size: 1.5rem; }
+    .section { padding: 16px; }
+    .item-header { flex-direction: column; gap: 4px; }
+    .time { white-space: normal; }
+    .header .summary { flex-wrap: wrap; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>📡 CunRadar Daily</h1>
+    <div class="date">2026-08-12  12:05</div>
+    <div class="summary">
+      <span>33</span> 条更新 · <span>5</span> 个来源
+    </div>
+  </div>
+
+  
+
+  <div class="section">
+    <h2>🎬 YouTube <span class="count">1</span></h2>
+    <div class="items"><div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.youtube.com/watch?v=JQ97GiDwPxc" target="_blank" rel="noopener">OpenAI’s AI Agents Just Crossed A Line</a>
+        <span class="time">2026-08-11 15:35</span>
+    </div>
+    <div class="meta">Two Minute Papers</div>
+    <p class="desc">❤️ Check out Lambda here and sign up for their GPU Cloud: https://lambda.ai/papers
+
+📝 More reports are available here:
+https://openai.com/index/hugging-face-model-evaluation-security-incident/
+https://huggingface.co/blog/security-incident-july-2026
+https://huggingface.co/blog/agent-intrusion-technic</p>
+</div></div>
+</div><div class="section">
+    <h2>📺 B站 <span class="count">1</span></h2>
+    <div class="items"><div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.bilibili.com/video/av116835475266255" target="_blank" rel="noopener">古法做视频里加一点点科技</a>
+        <span class="time">2026-06-29 21:26</span>
+    </div>
+    <div class="meta">跟李沐学AI</div>
+    
+</div></div>
+</div><div class="section">
+    <h2>📝 博客 & RSS <span class="count">20</span></h2>
+    <div class="items"><div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://brentfitzgerald.com/posts/the-human-is-the-loop/" target="_blank" rel="noopener">The Human Is the Loop</a>
+        <span class="time">2026-08-12 02:15</span>
+    </div>
+    <div class="meta">Hacker News</div>
+    <p class="desc"><p>Article URL: <a href="https://brentfitzgerald.com/posts/the-human-is-the-loop/">https://brentfitzgerald.com/posts/the-human-is-the-loop/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=49267108">https://news.ycombinator.com/item?id=49267108</a></p>
+<p>Points: 10</p>
+<p># Co</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.404media.co/company-offering-100-human-written-never-ai-peer-review-is-entirely-ai/" target="_blank" rel="noopener">Company Offering '100% Human-Written, Never AI' Medical Research Is 100% AI</a>
+        <span class="time">2026-08-12 02:05</span>
+    </div>
+    <div class="meta">Hacker News</div>
+    <p class="desc"><p>Article URL: <a href="https://www.404media.co/company-offering-100-human-written-never-ai-peer-review-is-entirely-ai/">https://www.404media.co/company-offering-100-human-written-never-ai-peer-review-is-entirely-ai/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=49267057">h</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://whdh.com/news/the-lifesaving-secret-hidden-inside-a-horseshoe-crabs-blue-blood-and-the-race-to-protect-the-species/" target="_blank" rel="noopener">The lifesaving secret hidden inside a horseshoe crab's blue blood</a>
+        <span class="time">2026-08-12 01:45</span>
+    </div>
+    <div class="meta">Hacker News</div>
+    <p class="desc"><p>Article URL: <a href="https://whdh.com/news/the-lifesaving-secret-hidden-inside-a-horseshoe-crabs-blue-blood-and-the-race-to-protect-the-species/">https://whdh.com/news/the-lifesaving-secret-hidden-inside-a-horseshoe-crabs-blue-blood-and-the-race-to-protect-the-species/</a></p>
+<p>Comments URL: <</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://newbedfordlight.org/new-bedford-police-officer-accused-of-using-flock-cameras-to-track-and-follow-ex-romantic-partner/" target="_blank" rel="noopener">New Bedford police officer accused of using Flock cameras to track ex-partner</a>
+        <span class="time">2026-08-12 01:42</span>
+    </div>
+    <div class="meta">Hacker News</div>
+    <p class="desc"><p>Article URL: <a href="https://newbedfordlight.org/new-bedford-police-officer-accused-of-using-flock-cameras-to-track-and-follow-ex-romantic-partner/">https://newbedfordlight.org/new-bedford-police-officer-accused-of-using-flock-cameras-to-track-and-follow-ex-romantic-partner/</a></p>
+<p>Comments </p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://tencent-hunyuan.github.io/Hunyuan3D-WorldClaw/" target="_blank" rel="noopener">WorldClaw Agentic 3D open-world generation at scale</a>
+        <span class="time">2026-08-11 21:56</span>
+    </div>
+    <div class="meta">Hacker News</div>
+    <p class="desc"><p>Article URL: <a href="https://tencent-hunyuan.github.io/Hunyuan3D-WorldClaw/">https://tencent-hunyuan.github.io/Hunyuan3D-WorldClaw/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=49265051">https://news.ycombinator.com/item?id=49265051</a></p>
+<p>Points: 157</p>
+<p># Comme</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://clickhouse.com/blog/pg_clickhouse-whats-new-july-2026" target="_blank" rel="noopener">pg_clickhouse v0.10: Subquery pushdown and 1000x faster TPC-H queries</a>
+        <span class="time">2026-08-11 21:54</span>
+    </div>
+    <div class="meta">Hacker News</div>
+    <p class="desc"><p>Article URL: <a href="https://clickhouse.com/blog/pg_clickhouse-whats-new-july-2026">https://clickhouse.com/blog/pg_clickhouse-whats-new-july-2026</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=49265031">https://news.ycombinator.com/item?id=49265031</a></p>
+<p>Points: 43</</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://arxiv.org/abs/2601.01828" target="_blank" rel="noopener">Emergent Introspective Awareness in Large Language Models</a>
+        <span class="time">2026-08-11 21:14</span>
+    </div>
+    <div class="meta">Hacker News</div>
+    <p class="desc"><p>Article URL: <a href="https://arxiv.org/abs/2601.01828">https://arxiv.org/abs/2601.01828</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=49264583">https://news.ycombinator.com/item?id=49264583</a></p>
+<p>Points: 41</p>
+<p># Comments: 15</p></p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://ngrok.com/blog/compression-is-prediction" target="_blank" rel="noopener">Compression is prediction</a>
+        <span class="time">2026-08-11 19:49</span>
+    </div>
+    <div class="meta">Hacker News</div>
+    <p class="desc"><p>Article URL: <a href="https://ngrok.com/blog/compression-is-prediction">https://ngrok.com/blog/compression-is-prediction</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=49263497">https://news.ycombinator.com/item?id=49263497</a></p>
+<p>Points: 329</p>
+<p># Comments: 136</p></p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://blogs.nvidia.com/blog/nemotron-lightning-switchyard-rtx-dgx/" target="_blank" rel="noopener">Nvidia Nemotron 3.5 Lightning and NeMo Switchyard</a>
+        <span class="time">2026-08-11 19:35</span>
+    </div>
+    <div class="meta">Hacker News</div>
+    <p class="desc"><p>Article URL: <a href="https://blogs.nvidia.com/blog/nemotron-lightning-switchyard-rtx-dgx/">https://blogs.nvidia.com/blog/nemotron-lightning-switchyard-rtx-dgx/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=49263340">https://news.ycombinator.com/item?id=49263340</a></p>
+<</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://blog.jordan.matelsky.com/Penplotter-holography/" target="_blank" rel="noopener">Making holograms with a pen plotter</a>
+        <span class="time">2026-08-11 18:51</span>
+    </div>
+    <div class="meta">Hacker News</div>
+    <p class="desc"><p>Article URL: <a href="https://blog.jordan.matelsky.com/Penplotter-holography/">https://blog.jordan.matelsky.com/Penplotter-holography/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=49262811">https://news.ycombinator.com/item?id=49262811</a></p>
+<p>Points: 132</p>
+<p># Com</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://ironicsans.ghost.io/how-we-used-to-get-jobs/" target="_blank" rel="noopener">How we used to get jobs: A newspaper classifieds story</a>
+        <span class="time">2026-08-11 18:09</span>
+    </div>
+    <div class="meta">Hacker News</div>
+    <p class="desc"><p>Article URL: <a href="https://ironicsans.ghost.io/how-we-used-to-get-jobs/">https://ironicsans.ghost.io/how-we-used-to-get-jobs/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=49262211">https://news.ycombinator.com/item?id=49262211</a></p>
+<p>Points: 119</p>
+<p># Comments:</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://x.ai/bot" target="_blank" rel="noopener">Grok Bot</a>
+        <span class="time">2026-08-11 17:23</span>
+    </div>
+    <div class="meta">Hacker News</div>
+    <p class="desc"><p>Article URL: <a href="https://x.ai/bot">https://x.ai/bot</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=49261514">https://news.ycombinator.com/item?id=49261514</a></p>
+<p>Points: 190</p>
+<p># Comments: 161</p></p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://master.dev/blog/typographic-css-tricks/" target="_blank" rel="noopener">CSS properties you should know for better text designs</a>
+        <span class="time">2026-08-11 17:16</span>
+    </div>
+    <div class="meta">Hacker News</div>
+    <p class="desc"><p>Article URL: <a href="https://master.dev/blog/typographic-css-tricks/">https://master.dev/blog/typographic-css-tricks/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=49261417">https://news.ycombinator.com/item?id=49261417</a></p>
+<p>Points: 91</p>
+<p># Comments: 7</p></p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering/" target="_blank" rel="noopener">Go is an ideal language for AI-assisted software engineering</a>
+        <span class="time">2026-08-11 16:57</span>
+    </div>
+    <div class="meta">Hacker News</div>
+    <p class="desc"><p>Article URL: <a href="https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering/">https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=492</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.modular.com/blog/modular-26-5-mojo-1-0-is-here" target="_blank" rel="noopener">Mojo 1.0</a>
+        <span class="time">2026-08-11 16:56</span>
+    </div>
+    <div class="meta">Hacker News</div>
+    <p class="desc"><p>Article URL: <a href="https://www.modular.com/blog/modular-26-5-mojo-1-0-is-here">https://www.modular.com/blog/modular-26-5-mojo-1-0-is-here</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=49261128">https://news.ycombinator.com/item?id=49261128</a></p>
+<p>Points: 324</p>
+<p</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/TheRealYT/git-knife" target="_blank" rel="noopener">Show HN: Git-knife – Edit commit messages, authors, and dates like a spreadsheet</a>
+        <span class="time">2026-08-11 15:09</span>
+    </div>
+    <div class="meta">Hacker News</div>
+    <p class="desc"><p>Article URL: <a href="https://github.com/TheRealYT/git-knife">https://github.com/TheRealYT/git-knife</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=49259611">https://news.ycombinator.com/item?id=49259611</a></p>
+<p>Points: 143</p>
+<p># Comments: 88</p></p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://manus.im/blog/a-note-to-our-users" target="_blank" rel="noopener">Manus will return to operating as an independent company</a>
+        <span class="time">2026-08-11 14:14</span>
+    </div>
+    <div class="meta">Hacker News</div>
+    <p class="desc"><p>Article URL: <a href="https://manus.im/blog/a-note-to-our-users">https://manus.im/blog/a-note-to-our-users</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=49258764">https://news.ycombinator.com/item?id=49258764</a></p>
+<p>Points: 142</p>
+<p># Comments: 70</p></p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://stolen-thoughts.com/" target="_blank" rel="noopener">Stealing Reasoning Traces from Proprietary LLM APIs</a>
+        <span class="time">2026-08-11 13:22</span>
+    </div>
+    <div class="meta">Hacker News</div>
+    <p class="desc"><p>Article URL: <a href="https://stolen-thoughts.com/">https://stolen-thoughts.com/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=49257876">https://news.ycombinator.com/item?id=49257876</a></p>
+<p>Points: 539</p>
+<p># Comments: 228</p></p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.quantamagazine.org/neutrinos-from-deep-inside-earth-provide-a-new-picture-of-the-mantle-20260807/" target="_blank" rel="noopener">Neutrinos from Deep Inside Earth Provide a New Picture of the Mantle</a>
+        <span class="time">2026-08-11 13:20</span>
+    </div>
+    <div class="meta">Hacker News</div>
+    <p class="desc"><p>Article URL: <a href="https://www.quantamagazine.org/neutrinos-from-deep-inside-earth-provide-a-new-picture-of-the-mantle-20260807/">https://www.quantamagazine.org/neutrinos-from-deep-inside-earth-provide-a-new-picture-of-the-mantle-20260807/</a></p>
+<p>Comments URL: <a href="https://news.ycombin</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.bbc.com/news/articles/c75gk620r22o" target="_blank" rel="noopener">England set to be one of the first countries to eliminate hepatitis C</a>
+        <span class="time">2026-08-11 12:41</span>
+    </div>
+    <div class="meta">Hacker News</div>
+    <p class="desc"><p>Article URL: <a href="https://www.bbc.com/news/articles/c75gk620r22o">https://www.bbc.com/news/articles/c75gk620r22o</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=49257377">https://news.ycombinator.com/item?id=49257377</a></p>
+<p>Points: 500</p>
+<p># Comments: 361</p></p>
+</div></div>
+</div><div class="section">
+    <h2>💻 GitHub 项目 <span class="count">1</span></h2>
+    <div class="items"><div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/langchain-ai/langchain/commit/7cdf965" target="_blank" rel="noopener">[langchain-ai/langchain] fix(core): preserve non-str/non-dict items in `DictPromptTemplate` list values (#39588)</a>
+        <span class="time">2026-08-12 01:32</span>
+    </div>
+    <div class="meta">LangChain</div>
+    
+</div></div>
+</div><div class="section">
+    <h2>🔥 GitHub Trending <span class="count">10</span></h2>
+    <div class="items"><div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/cathrynlavery/diagram-design" target="_blank" rel="noopener">cathrynlavery/diagram-design (HTML)</a>
+        <span class="time">2026-08-12 04:05</span>
+    </div>
+    <div class="meta">cathrynlavery/diagram-design</div>
+    <p class="desc">29 editorial diagram types for Claude Code. Self-contained HTML + SVG. No shadows, no Mermaid-slop.</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/msitarzewski/agency-agents" target="_blank" rel="noopener">msitarzewski/agency-agents (Shell)</a>
+        <span class="time">2026-08-12 04:05</span>
+    </div>
+    <div class="meta">msitarzewski/agency-agents</div>
+    <p class="desc">A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/semantica-agi/semantica" target="_blank" rel="noopener">semantica-agi/semantica (Python)</a>
+        <span class="time">2026-08-12 04:05</span>
+    </div>
+    <div class="meta">semantica-agi/semantica</div>
+    <p class="desc">Graph-Native Infrastructure for Context and Accountable AI Systems</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/nvm-sh/nvm" target="_blank" rel="noopener">nvm-sh/nvm (Shell)</a>
+        <span class="time">2026-08-12 04:05</span>
+    </div>
+    <div class="meta">nvm-sh/nvm</div>
+    <p class="desc">Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener">addyosmani/agent-skills (JavaScript)</a>
+        <span class="time">2026-08-12 04:05</span>
+    </div>
+    <div class="meta">addyosmani/agent-skills</div>
+    <p class="desc">Production-grade engineering skills for AI coding agents.</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/ZhuLinsen/daily_stock_analysis" target="_blank" rel="noopener">ZhuLinsen/daily_stock_analysis (Python)</a>
+        <span class="time">2026-08-12 04:05</span>
+    </div>
+    <div class="meta">ZhuLinsen/daily_stock_analysis</div>
+    <p class="desc">LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/vitali87/code-graph-rag" target="_blank" rel="noopener">vitali87/code-graph-rag (Python)</a>
+        <span class="time">2026-08-12 04:05</span>
+    </div>
+    <div class="meta">vitali87/code-graph-rag</div>
+    <p class="desc">The ultimate RAG for your monorepo. Query, understand, and edit multi-language codebases with the power of AI and knowledge graphs</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/anthropics/skills" target="_blank" rel="noopener">anthropics/skills (Python)</a>
+        <span class="time">2026-08-12 04:05</span>
+    </div>
+    <div class="meta">anthropics/skills</div>
+    <p class="desc">Public repository for Agent Skills</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/3b1b/manim" target="_blank" rel="noopener">3b1b/manim (Python)</a>
+        <span class="time">2026-08-12 04:05</span>
+    </div>
+    <div class="meta">3b1b/manim</div>
+    <p class="desc">Animation engine for explanatory math videos</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/HKUDS/DeepTutor" target="_blank" rel="noopener">HKUDS/DeepTutor (Python)</a>
+        <span class="time">2026-08-12 04:05</span>
+    </div>
+    <div class="meta">HKUDS/DeepTutor</div>
+    <p class="desc">DeepTutor: Lifelong Personalized Tutoring.https://deeptutor.info/.</p>
+</div></div>
+</div>
+
+  <div class="footer">
+    <a href="https://czlab.com" target="_blank">村长实验室 czlab.com</a>
+    · <a href="https://cunzhangblog.com" target="_blank">村长博客 cunzhangblog.com</a>
+    <br>
+    Generated by <a href="https://github.com/cunzhang/CunRadar" target="_blank">CunRadar</a>
+    · 2026-08-12 12:05:07
+  </div>
+</div>
+</body>
+</html>
