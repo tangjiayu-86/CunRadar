@@ -1,77 +1,57 @@
 # ═══════════════════════════════════════════════════════════════
-#                    CunRadar 配置文件
-#                        Version: 1.0
+#                    CunRadar 配置文件 — AI 日报
 # ═══════════════════════════════════════════════════════════════
 
 # 基础设置
 app:
   timezone: "Asia/Shanghai"
-  # 只统计过去 N 小时内发布的内容
-  max_item_age_hours: 24
+  max_item_age_hours: 24       # 每日更新视角
 
-# ─── 关注列表（示例 + 兜底） ─────────────────────────────────
-# ⚠️ 如果你在公开仓库中使用，建议通过 FOLLOW_CONFIG 环境变量
-#    传入真实关注列表（JSON 格式），避免暴露订阅信息。
-#
-#    本地开发：在 .env 中添加 FOLLOW_CONFIG=...
-#    线上部署：在 GitHub Variables 中添加 FOLLOW_CONFIG
-#
-#    详见 README.md 中的「隐私保护」章节。
-#
-#    以下是 JSON 格式示例（使用村长的信息作为演示）：
-#
-#    FOLLOW_CONFIG='{
-#      "youtube": [
-#        {"name": "Web3村长", "channel_id": "UC5MbekhrH8iyFBQLbccBSRg"}
-#      ],
-#      "bilibili": [
-#        {"name": "Web3村长Official", "uid": 1224034462}
-#      ],
-#      "rss": [
-#        {"name": "村长博客", "url": "https://cunzhangblog.com/rss.xml"}
-#      ],
-#      "github": [
-#        {"name": "CunRadar", "repo": "cunzhangcrypto/CunRadar"}
-#      ],
-#      "github_trending": {
-#        "enabled": true,
-#        "language": "",
-#        "limit": 5
-#      }
-#    }'
-# ────────────────────────────────────────────────────────────────
+# ─── 关注列表 ─────────────────────────────────────────────────
 follow:
 
-  # YouTube 频道
+  # YouTube AI 频道（用 @handle 自动解析）
   youtube:
-    - name: "Web3村长"
-      channel_id: "UC5MbekhrH8iyFBQLbccBSRg"
+    - name: "Two Minute Papers"
+      handle: "@TwoMinutePapers"
+    - name: "Yannic Kilcher"
+      handle: "@YannicKilcher"
+    - name: "AI Explained"
+      handle: "@aiexplained-official"
 
-  # B站 UP 主
+  # B站 AI UP 主
   bilibili:
-    - name: "Web3村长Official"
-      uid: 1224034462
+    - name: "跟李沐学AI"
+      uid: 1567748478
+    - name: "秋叶aaaki"
+      uid: 12566101
 
-  # RSS / 博客订阅
+  # RSS 博客 / 新闻
   rss:
-    - name: "村长博客"
-      url: "https://cunzhangblog.com/rss.xml"
+    - name: "Hacker News"
+      url: "https://hnrss.org/frontpage?count=20"
+    - name: "36氪"
+      url: "https://36kr.com/feed"
 
   # GitHub 项目追踪
   github:
-    - name: "CunRadar"
-      repo: "cunzhangcrypto/CunRadar"
+    - name: "LangChain"
+      repo: "langchain-ai/langchain"
+    - name: "AutoGPT"
+      repo: "Significant-Gravitas/AutoGPT"
+    - name: "Ollama"
+      repo: "ollama/ollama"
 
-  # GitHub Trending
+  # GitHub Trending 每日热门
   github_trending:
     enabled: true
-    language: ""
-    limit: 5
+    language: ""               # 空 = 所有语言
+    limit: 10                  # 前10名
 
 # ─── AI 配置 ───────────────────────────────────────────────────
 ai:
-  model: "deepseek-chat"              # DeepSeek 模型名
-  api_key: "${DEEPSEEK_API_KEY}"      # 从环境变量读取
+  model: "deepseek-chat"
+  api_key: "${DEEPSEEK_API_KEY}"
   api_base: "https://api.deepseek.com"
   timeout: 120
 
@@ -84,5 +64,4 @@ notification:
 # ─── 输出配置 ─────────────────────────────────────────────────
 output:
   dir: "output"
-  # 生成 HTML 日报
   html: true
