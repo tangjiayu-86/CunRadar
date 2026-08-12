@@ -32,6 +32,8 @@ jobs:
   scan:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repository
@@ -73,12 +75,10 @@ jobs:
           path: output/cunradar.db
           key: cunradar-db-v1
 
-      - name: Deploy to Cloudflare Pages
-        run: |
-          if [ -n "$CLOUDFLARE_API_TOKEN" ]; then
-            npx wrangler pages deploy output/ --project-name=${{ vars.CUNRADAR_PROJECT_NAME || 'cunradar' }}
-          else
-            echo "Skipping Cloudflare deploy (CLOUDFLARE_API_TOKEN not configured)"
-          fi
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: output
+          destination_dir: ${{ github.run_number }}
+          keep_files: true
