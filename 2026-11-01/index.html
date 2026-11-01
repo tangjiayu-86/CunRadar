@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CunRadar Daily - 你的个人互联网信息雷达，AI 自动追踪 YouTube、B站、博客和 GitHub 更新。">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<title>CunRadar Daily - 2026-11-01</title>
+<style>
+  :root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --border: #334155;
+    --fg: #e2e8f0;
+    --fg-dim: #94a3b8;
+    --accent: #38bdf8;
+    --accent-glow: rgba(56, 189, 248, 0.15);
+    --green: #4ade80;
+    --yellow: #fbbf24;
+    --radius: 12px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 "Noto Sans SC", sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  .container { max-width: 800px; margin: 0 auto; padding: 24px 16px; }
+  .header {
+    text-align: center;
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 32px;
+  }
+  .header .logo {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .header .date {
+    color: var(--fg-dim);
+    font-size: 1.1rem;
+    margin-top: 8px;
+  }
+  .header .summary {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: var(--fg-dim);
+  }
+  .header .summary span { color: var(--accent); font-weight: 600; }
+  .section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 20px;
+  }
+  .section h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section h2 .count {
+    display: inline-block;
+    background: var(--accent-glow);
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 1px 10px;
+    border-radius: 20px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .empty-state {
+    text-align: center;
+    color: var(--fg-dim);
+    font-size: 0.9rem;
+    padding: 24px 0;
+  }
+  .item {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+  }
+  .item:last-child { border-bottom: none; }
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .item-title {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  .item-title:hover { text-decoration: underline; }
+  .time {
+    color: var(--fg-dim);
+    font-size: 0.8rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .meta {
+    color: var(--fg-dim);
+    font-size: 0.8rem;
+    margin-top: 4px;
+  }
+  .desc {
+    color: var(--fg-dim);
+    font-size: 0.85rem;
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+  .digest {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 20px;
+    line-height: 1.8;
+  }
+  .digest h2, .digest h3 {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    color: var(--yellow);
+  }
+  .digest h2:first-child, .digest h3:first-child { margin-top: 0; }
+  .digest p { margin-bottom: 8px; color: var(--fg); }
+  .digest li {
+    margin-left: 20px;
+    margin-bottom: 4px;
+    color: var(--fg);
+  }
+  .footer {
+    text-align: center;
+    color: var(--fg-dim);
+    font-size: 0.8rem;
+    padding: 32px 0;
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+  }
+  .footer a { color: var(--accent); text-decoration: none; }
+  @media (max-width: 600px) {
+    .container { padding: 16px 12px; }
+    .header { padding: 32px 0 24px; }
+    .header h1 { font-size: 1.5rem; }
+    .section { padding: 16px; }
+    .item-header { flex-direction: column; gap: 4px; }
+    .time { white-space: normal; }
+    .header .summary { flex-wrap: wrap; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>📡 CunRadar Daily</h1>
+    <div class="date">2026-11-01  11:19</div>
+    <div class="summary">
+      <span>27</span> 条更新 · <span>4</span> 个来源
+    </div>
+  </div>
+
+  
+
+  <div class="section">
+    <h2>🎬 YouTube</h2>
+    <div class="empty-state">无新内容</div>
+</div><div class="section">
+    <h2>📺 B站 <span class="count">1</span></h2>
+    <div class="items"><div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.bilibili.com/video/av116835475266255" target="_blank" rel="noopener">古法做视频里加一点点科技</a>
+        <span class="time">2026-06-29 21:26</span>
+    </div>
+    <div class="meta">跟李沐学AI</div>
+    
+</div></div>
+</div><div class="section">
+    <h2>📝 博客 & RSS <span class="count">4</span></h2>
+    <div class="items"><div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.qbitai.com/2026/10/506904.html" target="_blank" rel="noopener">刚刚，DeepSeek重磅开源：Agent底座架构！</a>
+        <span class="time">2026-10-31 13:49</span>
+    </div>
+    <div class="meta">量子位</div>
+    <p class="desc">AI已经自己找到Bug并提交PR</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.qbitai.com/2026/10/506884.html" target="_blank" rel="noopener">你的8G iPad里有12G内存！库克走了但他的刀法追着我砍</a>
+        <span class="time">2026-10-31 05:17</span>
+    </div>
+    <div class="meta">量子位</div>
+    <p class="desc">苹果“牛奶倒河里”式操作翻红</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.qbitai.com/2026/10/506866.html" target="_blank" rel="noopener">世界模型首次指导设计芯片！超大核NPU700TOPS，99%算力可用</a>
+        <span class="time">2026-10-31 05:11</span>
+    </div>
+    <div class="meta">量子位</div>
+    <p class="desc">AI算力利用“九九成”</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.qbitai.com/2026/10/506855.html" target="_blank" rel="noopener">刚刚，Claude宣布取消5小时限制！首批Ultra用户已「解封」</a>
+        <span class="time">2026-10-31 05:05</span>
+    </div>
+    <div class="meta">量子位</div>
+    <p class="desc">200美元Ultra用户先用</p>
+</div></div>
+</div><div class="section">
+    <h2>💻 GitHub 项目 <span class="count">12</span></h2>
+    <div class="items"><div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/langchain-ai/langchain/commit/6671bf7" target="_blank" rel="noopener">[langchain-ai/langchain] chore(deps): bump joserfc from 1.7.4 to 1.7.6 in /libs/langchain_v1 (#41587)</a>
+        <span class="time">2026-10-31 15:17</span>
+    </div>
+    <div class="meta">LangChain</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/Significant-Gravitas/AutoGPT/commit/af21363" target="_blank" rel="noopener">[Significant-Gravitas/AutoGPT] test(backend): the webhook-preset migration tests own the graph IDs they save</a>
+        <span class="time">2026-11-01 02:20</span>
+    </div>
+    <div class="meta">AutoGPT</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/Significant-Gravitas/AutoGPT/commit/63b6d62" target="_blank" rel="noopener">[Significant-Gravitas/AutoGPT] fix(blocks): send saved SMTP and database logins only to the server they are for</a>
+        <span class="time">2026-11-01 01:48</span>
+    </div>
+    <div class="meta">AutoGPT</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/Significant-Gravitas/AutoGPT/commit/885484c" target="_blank" rel="noopener">[Significant-Gravitas/AutoGPT] fix(blocks): keep platform-owned vendor keys away from blocks that store objects with the vendor</a>
+        <span class="time">2026-11-01 01:48</span>
+    </div>
+    <div class="meta">AutoGPT</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/Significant-Gravitas/AutoGPT/commit/ab97a6a" target="_blank" rel="noopener">[Significant-Gravitas/AutoGPT] fix(platform): hold an expert's work to the accounts granted to it</a>
+        <span class="time">2026-11-01 01:48</span>
+    </div>
+    <div class="meta">AutoGPT</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/Significant-Gravitas/AutoGPT/commit/2151e69" target="_blank" rel="noopener">[Significant-Gravitas/AutoGPT] fix(backend): drop a host-scoped credential's headers on a cross-origin redirect</a>
+        <span class="time">2026-11-01 01:48</span>
+    </div>
+    <div class="meta">AutoGPT</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/Significant-Gravitas/AutoGPT/commit/a10e5b2" target="_blank" rel="noopener">[Significant-Gravitas/AutoGPT] fix(backend/executor): MCP tool nodes use only the credential selected for them</a>
+        <span class="time">2026-11-01 01:48</span>
+    </div>
+    <div class="meta">AutoGPT</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/Significant-Gravitas/AutoGPT/commit/542646d" target="_blank" rel="noopener">[Significant-Gravitas/AutoGPT] fix(backend): bind every version of a workflow ID to the user who created it</a>
+        <span class="time">2026-11-01 01:48</span>
+    </div>
+    <div class="meta">AutoGPT</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/Significant-Gravitas/AutoGPT/commit/1fe4bc5" target="_blank" rel="noopener">[Significant-Gravitas/AutoGPT] fix(platform): workspace text previews answer as plain text and the proxy relays page types as downloads</a>
+        <span class="time">2026-11-01 01:48</span>
+    </div>
+    <div class="meta">AutoGPT</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/Significant-Gravitas/AutoGPT/commit/e8977d2" target="_blank" rel="noopener">[Significant-Gravitas/AutoGPT] fix(backend): bound the validation errors a 422 reports and logs</a>
+        <span class="time">2026-11-01 01:48</span>
+    </div>
+    <div class="meta">AutoGPT</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/Significant-Gravitas/AutoGPT/commit/72dc9b4" target="_blank" rel="noopener">[Significant-Gravitas/AutoGPT] fix(backend): update expert roster tests to the shipped skills catalog (#16443)</a>
+        <span class="time">2026-10-31 23:09</span>
+    </div>
+    <div class="meta">AutoGPT</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/ollama/ollama/commit/c1db5f9" target="_blank" rel="noopener">[ollama/ollama] openai: don't override model sampler defaults (#19432)</a>
+        <span class="time">2026-10-31 22:46</span>
+    </div>
+    <div class="meta">Ollama</div>
+    
+</div></div>
+</div><div class="section">
+    <h2>🔥 GitHub Trending <span class="count">10</span></h2>
+    <div class="items"><div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/thedotmack/claude-mem" target="_blank" rel="noopener">thedotmack/claude-mem (TypeScript)</a>
+        <span class="time">2026-11-01 03:19</span>
+    </div>
+    <div class="meta">thedotmack/claude-mem</div>
+    <p class="desc">Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/mattpocock/skills" target="_blank" rel="noopener">mattpocock/skills (Shell)</a>
+        <span class="time">2026-11-01 03:19</span>
+    </div>
+    <div class="meta">mattpocock/skills</div>
+    <p class="desc">Skills for Real Engineers. Straight from my .agents directory.</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/Donchitos/Claude-Code-Game-Studios" target="_blank" rel="noopener">Donchitos/Claude-Code-Game-Studios (Shell)</a>
+        <span class="time">2026-11-01 03:19</span>
+    </div>
+    <div class="meta">Donchitos/Claude-Code-Game-Studios</div>
+    <p class="desc">Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy.</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/pingdotgg/t3code" target="_blank" rel="noopener">pingdotgg/t3code (TypeScript)</a>
+        <span class="time">2026-11-01 03:19</span>
+    </div>
+    <div class="meta">pingdotgg/t3code</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/Renhuai123/ziwei-doushu" target="_blank" rel="noopener">Renhuai123/ziwei-doushu (TypeScript)</a>
+        <span class="time">2026-11-01 03:19</span>
+    </div>
+    <div class="meta">Renhuai123/ziwei-doushu</div>
+    <p class="desc">紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/milind-soni/OpenMausBot" target="_blank" rel="noopener">milind-soni/OpenMausBot (TypeScript)</a>
+        <span class="time">2026-11-01 03:19</span>
+    </div>
+    <div class="meta">milind-soni/OpenMausBot</div>
+    <p class="desc">Open-source Grok Bot alternative with a virtual machine that bots can use</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/pbakaus/impeccable" target="_blank" rel="noopener">pbakaus/impeccable (Rust)</a>
+        <span class="time">2026-11-01 03:19</span>
+    </div>
+    <div class="meta">pbakaus/impeccable</div>
+    <p class="desc">The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/obra/superpowers" target="_blank" rel="noopener">obra/superpowers (Shell)</a>
+        <span class="time">2026-11-01 03:19</span>
+    </div>
+    <div class="meta">obra/superpowers</div>
+    <p class="desc">An agentic skills framework & software development methodology that works.</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/lightpanda-io/browser" target="_blank" rel="noopener">lightpanda-io/browser (Zig)</a>
+        <span class="time">2026-11-01 03:19</span>
+    </div>
+    <div class="meta">lightpanda-io/browser</div>
+    <p class="desc">Lightpanda: the headless browser designed for AI and automation</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/HKUDS/DeepTutor" target="_blank" rel="noopener">HKUDS/DeepTutor (Python)</a>
+        <span class="time">2026-11-01 03:19</span>
+    </div>
+    <div class="meta">HKUDS/DeepTutor</div>
+    <p class="desc">DeepTutor: Lifelong Personalized Tutoring.https://deeptutor.info/.</p>
+</div></div>
+</div>
+
+  <div class="footer">
+    <a href="https://czlab.com" target="_blank">村长实验室 czlab.com</a>
+    · <a href="https://cunzhangblog.com" target="_blank">村长博客 cunzhangblog.com</a>
+    <br>
+    Generated by <a href="https://github.com/cunzhang/CunRadar" target="_blank">CunRadar</a>
+    · 2026-11-01 11:19:36
+  </div>
+</div>
+</body>
+</html>
