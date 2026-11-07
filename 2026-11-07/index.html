@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CunRadar Daily - 你的个人互联网信息雷达，AI 自动追踪 YouTube、B站、博客和 GitHub 更新。">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<title>CunRadar Daily - 2026-11-07</title>
+<style>
+  :root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --border: #334155;
+    --fg: #e2e8f0;
+    --fg-dim: #94a3b8;
+    --accent: #38bdf8;
+    --accent-glow: rgba(56, 189, 248, 0.15);
+    --green: #4ade80;
+    --yellow: #fbbf24;
+    --radius: 12px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 "Noto Sans SC", sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  .container { max-width: 800px; margin: 0 auto; padding: 24px 16px; }
+  .header {
+    text-align: center;
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 32px;
+  }
+  .header .logo {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .header .date {
+    color: var(--fg-dim);
+    font-size: 1.1rem;
+    margin-top: 8px;
+  }
+  .header .summary {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: var(--fg-dim);
+  }
+  .header .summary span { color: var(--accent); font-weight: 600; }
+  .section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 20px;
+  }
+  .section h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section h2 .count {
+    display: inline-block;
+    background: var(--accent-glow);
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 1px 10px;
+    border-radius: 20px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .empty-state {
+    text-align: center;
+    color: var(--fg-dim);
+    font-size: 0.9rem;
+    padding: 24px 0;
+  }
+  .item {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+  }
+  .item:last-child { border-bottom: none; }
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .item-title {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  .item-title:hover { text-decoration: underline; }
+  .time {
+    color: var(--fg-dim);
+    font-size: 0.8rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .meta {
+    color: var(--fg-dim);
+    font-size: 0.8rem;
+    margin-top: 4px;
+  }
+  .desc {
+    color: var(--fg-dim);
+    font-size: 0.85rem;
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+  .digest {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 20px;
+    line-height: 1.8;
+  }
+  .digest h2, .digest h3 {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    color: var(--yellow);
+  }
+  .digest h2:first-child, .digest h3:first-child { margin-top: 0; }
+  .digest p { margin-bottom: 8px; color: var(--fg); }
+  .digest li {
+    margin-left: 20px;
+    margin-bottom: 4px;
+    color: var(--fg);
+  }
+  .footer {
+    text-align: center;
+    color: var(--fg-dim);
+    font-size: 0.8rem;
+    padding: 32px 0;
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+  }
+  .footer a { color: var(--accent); text-decoration: none; }
+  @media (max-width: 600px) {
+    .container { padding: 16px 12px; }
+    .header { padding: 32px 0 24px; }
+    .header h1 { font-size: 1.5rem; }
+    .section { padding: 16px; }
+    .item-header { flex-direction: column; gap: 4px; }
+    .time { white-space: normal; }
+    .header .summary { flex-wrap: wrap; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>📡 CunRadar Daily</h1>
+    <div class="date">2026-11-07  11:46</div>
+    <div class="summary">
+      <span>22</span> 条更新 · <span>4</span> 个来源
+    </div>
+  </div>
+
+  
+
+  <div class="section">
+    <h2>🎬 YouTube</h2>
+    <div class="empty-state">无新内容</div>
+</div><div class="section">
+    <h2>📺 B站 <span class="count">1</span></h2>
+    <div class="items"><div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.bilibili.com/video/av117565602928482" target="_blank" rel="noopener">AI助手还在一问一答？做了一个边听边说、边干活的全双工模型，讲一讲背后的技术</a>
+        <span class="time">2026-11-05 23:30</span>
+    </div>
+    <div class="meta">跟李沐学AI</div>
+    <p class="desc">今天的大部分语音助手还是&quot;你说一句、它答一句&quot;。Higgs Realtime Duplex 是我们做的全双工多模态模型：像真人一样边听边说、边看边想，还能一边聊天一边在后台调用工具，并且有一张脸。这个视频用 44 分钟讲清楚它为什么要这样设计、怎么训练、效果如何。
+
+技术 blog 原文: https://www.boson.ai/blog/higgs-realtime-duplex</p>
+</div></div>
+</div><div class="section">
+    <h2>📝 博客 & RSS <span class="count">4</span></h2>
+    <div class="items"><div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.qbitai.com/2026/11/508155.html" target="_blank" rel="noopener">DeepSeek带火稀疏计算，国产芯片公司加速突围：这家公司又融近10亿</a>
+        <span class="time">2026-11-06 07:00</span>
+    </div>
+    <div class="meta">量子位</div>
+    <p class="desc">Q3营收实现数倍增长</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.qbitai.com/2026/11/508118.html" target="_blank" rel="noopener">一边赛博修仙，一边卖家电！AI短剧开始冲双11业绩了？</a>
+        <span class="time">2026-11-06 06:54</span>
+    </div>
+    <div class="meta">量子位</div>
+    <p class="desc">挑战商业视频的高难度场景</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.qbitai.com/2026/11/508143.html" target="_blank" rel="noopener">从RSI、Agent、Physical AI到整个系统栈，2026 奇点智能技术大会最新日程公布！</a>
+        <span class="time">2026-11-06 06:43</span>
+    </div>
+    <div class="meta">量子位</div>
+    <p class="desc">11 月 20—21 日，2026 奇点智能技术大会将在北京万达文华酒店举行。</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.qbitai.com/2026/11/508107.html" target="_blank" rel="noopener">99.4%登顶全球第一！这个中国AI师承世界冠军</a>
+        <span class="time">2026-11-06 05:01</span>
+    </div>
+    <div class="meta">量子位</div>
+    <p class="desc">一举刷新「AI安全世界杯」CyberGym世界纪录</p>
+</div></div>
+</div><div class="section">
+    <h2>💻 GitHub 项目 <span class="count">7</span></h2>
+    <div class="items"><div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/langchain-ai/langchain/commit/d9caf08" target="_blank" rel="noopener">[langchain-ai/langchain] docs: update OpenWiki (#41726)</a>
+        <span class="time">2026-11-06 17:38</span>
+    </div>
+    <div class="meta">LangChain</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/langchain-ai/langchain/commit/989f2a8" target="_blank" rel="noopener">[langchain-ai/langchain] chore(model-profiles): refresh model profile data (#41725)</a>
+        <span class="time">2026-11-06 17:09</span>
+    </div>
+    <div class="meta">LangChain</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/ollama/ollama/commit/5e983d4" target="_blank" rel="noopener">[ollama/ollama] launch: fix Claude Code routing and retired model errors (#19587)</a>
+        <span class="time">2026-11-07 02:28</span>
+    </div>
+    <div class="meta">Ollama</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/ollama/ollama/commit/c053d1e" target="_blank" rel="noopener">[ollama/ollama] MLX: make Qwen3.8 Flash Next memory efficient (#18078)</a>
+        <span class="time">2026-11-06 21:39</span>
+    </div>
+    <div class="meta">Ollama</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/ollama/ollama/commit/eaf3f28" target="_blank" rel="noopener">[ollama/ollama] windows: add CUDA 13.5 and SM 103 for ARM64 (#19580)</a>
+        <span class="time">2026-11-06 21:33</span>
+    </div>
+    <div class="meta">Ollama</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/ollama/ollama/commit/51e7030" target="_blank" rel="noopener">[ollama/ollama] README: add Quock to Mobile community integrations (#19361)</a>
+        <span class="time">2026-11-06 20:41</span>
+    </div>
+    <div class="meta">Ollama</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/ollama/ollama/commit/7ed1eb9" target="_blank" rel="noopener">[ollama/ollama] llama.cpp: version bump b12177 (#19576)</a>
+        <span class="time">2026-11-06 20:00</span>
+    </div>
+    <div class="meta">Ollama</div>
+    
+</div></div>
+</div><div class="section">
+    <h2>🔥 GitHub Trending <span class="count">10</span></h2>
+    <div class="items"><div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/zed-industries/zed" target="_blank" rel="noopener">zed-industries/zed (Rust)</a>
+        <span class="time">2026-11-07 03:46</span>
+    </div>
+    <div class="meta">zed-industries/zed</div>
+    <p class="desc">Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/NVIDIA/auto-ontology" target="_blank" rel="noopener">NVIDIA/auto-ontology (Python)</a>
+        <span class="time">2026-11-07 03:46</span>
+    </div>
+    <div class="meta">NVIDIA/auto-ontology</div>
+    <p class="desc">Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/rails/rails" target="_blank" rel="noopener">rails/rails (Ruby)</a>
+        <span class="time">2026-11-07 03:46</span>
+    </div>
+    <div class="meta">rails/rails</div>
+    <p class="desc">Ruby on Rails</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/mpv-player/mpv" target="_blank" rel="noopener">mpv-player/mpv (C)</a>
+        <span class="time">2026-11-07 03:46</span>
+    </div>
+    <div class="meta">mpv-player/mpv</div>
+    <p class="desc">🎥 Command line media player</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/rust-lang/rust" target="_blank" rel="noopener">rust-lang/rust (Rust)</a>
+        <span class="time">2026-11-07 03:46</span>
+    </div>
+    <div class="meta">rust-lang/rust</div>
+    <p class="desc">Empowering everyone to build reliable and efficient software.</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/react/react" target="_blank" rel="noopener">react/react (JavaScript)</a>
+        <span class="time">2026-11-07 03:46</span>
+    </div>
+    <div class="meta">react/react</div>
+    <p class="desc">The library for web and native user interfaces.</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/angular/angular" target="_blank" rel="noopener">angular/angular (TypeScript)</a>
+        <span class="time">2026-11-07 03:46</span>
+    </div>
+    <div class="meta">angular/angular</div>
+    <p class="desc">Deliver web apps with confidence 🚀</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/symfony/symfony" target="_blank" rel="noopener">symfony/symfony (PHP)</a>
+        <span class="time">2026-11-07 03:46</span>
+    </div>
+    <div class="meta">symfony/symfony</div>
+    <p class="desc">The Symfony PHP framework</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/prometheus/prometheus" target="_blank" rel="noopener">prometheus/prometheus (Go)</a>
+        <span class="time">2026-11-07 03:46</span>
+    </div>
+    <div class="meta">prometheus/prometheus</div>
+    <p class="desc">The Prometheus monitoring system and time series database.</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/google/skills" target="_blank" rel="noopener">google/skills (Python)</a>
+        <span class="time">2026-11-07 03:46</span>
+    </div>
+    <div class="meta">google/skills</div>
+    <p class="desc">Agent Skills for Google products and technologies</p>
+</div></div>
+</div>
+
+  <div class="footer">
+    <a href="https://czlab.com" target="_blank">村长实验室 czlab.com</a>
+    · <a href="https://cunzhangblog.com" target="_blank">村长博客 cunzhangblog.com</a>
+    <br>
+    Generated by <a href="https://github.com/cunzhang/CunRadar" target="_blank">CunRadar</a>
+    · 2026-11-07 11:46:35
+  </div>
+</div>
+</body>
+</html>
