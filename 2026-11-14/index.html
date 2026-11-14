@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CunRadar Daily - 你的个人互联网信息雷达，AI 自动追踪 YouTube、B站、博客和 GitHub 更新。">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<title>CunRadar Daily - 2026-11-14</title>
+<style>
+  :root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --border: #334155;
+    --fg: #e2e8f0;
+    --fg-dim: #94a3b8;
+    --accent: #38bdf8;
+    --accent-glow: rgba(56, 189, 248, 0.15);
+    --green: #4ade80;
+    --yellow: #fbbf24;
+    --radius: 12px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 "Noto Sans SC", sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  .container { max-width: 800px; margin: 0 auto; padding: 24px 16px; }
+  .header {
+    text-align: center;
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 32px;
+  }
+  .header .logo {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .header .date {
+    color: var(--fg-dim);
+    font-size: 1.1rem;
+    margin-top: 8px;
+  }
+  .header .summary {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: var(--fg-dim);
+  }
+  .header .summary span { color: var(--accent); font-weight: 600; }
+  .section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 20px;
+  }
+  .section h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section h2 .count {
+    display: inline-block;
+    background: var(--accent-glow);
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 1px 10px;
+    border-radius: 20px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .empty-state {
+    text-align: center;
+    color: var(--fg-dim);
+    font-size: 0.9rem;
+    padding: 24px 0;
+  }
+  .item {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+  }
+  .item:last-child { border-bottom: none; }
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .item-title {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  .item-title:hover { text-decoration: underline; }
+  .time {
+    color: var(--fg-dim);
+    font-size: 0.8rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .meta {
+    color: var(--fg-dim);
+    font-size: 0.8rem;
+    margin-top: 4px;
+  }
+  .desc {
+    color: var(--fg-dim);
+    font-size: 0.85rem;
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+  .digest {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 20px;
+    line-height: 1.8;
+  }
+  .digest h2, .digest h3 {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    color: var(--yellow);
+  }
+  .digest h2:first-child, .digest h3:first-child { margin-top: 0; }
+  .digest p { margin-bottom: 8px; color: var(--fg); }
+  .digest li {
+    margin-left: 20px;
+    margin-bottom: 4px;
+    color: var(--fg);
+  }
+  .footer {
+    text-align: center;
+    color: var(--fg-dim);
+    font-size: 0.8rem;
+    padding: 32px 0;
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+  }
+  .footer a { color: var(--accent); text-decoration: none; }
+  @media (max-width: 600px) {
+    .container { padding: 16px 12px; }
+    .header { padding: 32px 0 24px; }
+    .header h1 { font-size: 1.5rem; }
+    .section { padding: 16px; }
+    .item-header { flex-direction: column; gap: 4px; }
+    .time { white-space: normal; }
+    .header .summary { flex-wrap: wrap; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>📡 CunRadar Daily</h1>
+    <div class="date">2026-11-14  12:06</div>
+    <div class="summary">
+      <span>31</span> 条更新 · <span>3</span> 个来源
+    </div>
+  </div>
+
+  
+
+  <div class="section">
+    <h2>🎬 YouTube</h2>
+    <div class="empty-state">无新内容</div>
+</div><div class="section">
+    <h2>📺 B站</h2>
+    <div class="empty-state">无新内容</div>
+</div><div class="section">
+    <h2>📝 博客 & RSS <span class="count">10</span></h2>
+    <div class="items"><div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.qbitai.com/2026/11/509995.html" target="_blank" rel="noopener">黄仁勋辞职，英伟达33年首换帅，市值蒸发超3万亿</a>
+        <span class="time">2026-11-13 09:02</span>
+    </div>
+    <div class="meta">量子位</div>
+    <p class="desc">一个时代结束了</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.qbitai.com/2026/11/509827.html" target="_blank" rel="noopener">MEET2027含金量再加码：AI4S/量子计算/AI Infra…第二批嘉宾强势来袭！</a>
+        <span class="time">2026-11-13 07:51</span>
+    </div>
+    <div class="meta">量子位</div>
+    <p class="desc">12.9 北京，来MEET2027现场</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.qbitai.com/2026/11/509796.html" target="_blank" rel="noopener">中国AI突破复杂肺癌诊疗！中美医疗圈集体坐不住了</a>
+        <span class="time">2026-11-13 07:43</span>
+    </div>
+    <div class="meta">量子位</div>
+    <p class="desc">250名国内顶尖三甲医院医生联合评测</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.qbitai.com/2026/11/509730.html" target="_blank" rel="noopener">比亚迪第1900万辆新能源汽车下线，科技新奢旗舰SUV方程豹钛9开启预订</a>
+        <span class="time">2026-11-13 07:17</span>
+    </div>
+    <div class="meta">量子位</div>
+    <p class="desc">比亚迪第1900万辆新能源汽车在西安工厂正式下线</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.qbitai.com/2026/11/509716.html" target="_blank" rel="noopener">从仰望极速新纪录和鼎曜全球发布 看比亚迪的国际化与高端化之路</a>
+        <span class="time">2026-11-13 07:12</span>
+    </div>
+    <div class="meta">量子位</div>
+    <p class="desc">比亚迪正在把规模优势转化为技术与品牌价值</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.qbitai.com/2026/11/509710.html" target="_blank" rel="noopener">比亚迪与神州租车首批闪充车及闪充站投放仪式顺利举行，战略合作落地兑现，闪充中国再次提速</a>
+        <span class="time">2026-11-13 07:09</span>
+    </div>
+    <div class="meta">量子位</div>
+    <p class="desc">2026年11月10日，比亚迪与神州租车首批闪充车及闪充站投放仪式在山东济南隆重举办</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.qbitai.com/2026/11/509663.html" target="_blank" rel="noopener">高难盲测超越GPT-6-Astra与Opus-5！无界前沿开源Fx-Bio-1031，把RSI带进生命科学</a>
+        <span class="time">2026-11-13 07:06</span>
+    </div>
+    <div class="meta">量子位</div>
+    <p class="desc">数据不出域、本地可部署</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.qbitai.com/2026/11/509653.html" target="_blank" rel="noopener">openJiuwen发布RSI原生AgentOS，让Agent自由变身，持续迭代！</a>
+        <span class="time">2026-11-13 06:54</span>
+    </div>
+    <div class="meta">量子位</div>
+    <p class="desc">想要什么功能，让Agent自己开发</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.qbitai.com/2026/11/509613.html" target="_blank" rel="noopener">特斯拉和SpaceX最快下月合并</a>
+        <span class="time">2026-11-13 06:43</span>
+    </div>
+    <div class="meta">量子位</div>
+    <p class="desc">马斯克帝国终极形态。</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.qbitai.com/2026/11/509614.html" target="_blank" rel="noopener">中国机器人学会隔墙“递眼色”！成功率从0飙到100%，组队干活不烧心</a>
+        <span class="time">2026-11-13 06:29</span>
+    </div>
+    <div class="meta">量子位</div>
+    <p class="desc">信息少传80%，准确率反而提高</p>
+</div></div>
+</div><div class="section">
+    <h2>💻 GitHub 项目 <span class="count">11</span></h2>
+    <div class="items"><div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/langchain-ai/langchain/commit/ea17e48" target="_blank" rel="noopener">[langchain-ai/langchain] release(mistralai): 1.2.0 (#41859)</a>
+        <span class="time">2026-11-14 00:43</span>
+    </div>
+    <div class="meta">LangChain</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/langchain-ai/langchain/commit/157db65" target="_blank" rel="noopener">[langchain-ai/langchain] release(xai): 1.4.0 (#41857)</a>
+        <span class="time">2026-11-14 00:43</span>
+    </div>
+    <div class="meta">LangChain</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/langchain-ai/langchain/commit/3995792" target="_blank" rel="noopener">[langchain-ai/langchain] release(core): 1.8.1 (#41855)</a>
+        <span class="time">2026-11-14 00:42</span>
+    </div>
+    <div class="meta">LangChain</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/langchain-ai/langchain/commit/d9ef75e" target="_blank" rel="noopener">[langchain-ai/langchain] release(groq): 1.2.0 (#41856)</a>
+        <span class="time">2026-11-14 00:42</span>
+    </div>
+    <div class="meta">LangChain</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/langchain-ai/langchain/commit/034b4f8" target="_blank" rel="noopener">[langchain-ai/langchain] release(deepseek): 1.2.0 (#41858)</a>
+        <span class="time">2026-11-14 00:39</span>
+    </div>
+    <div class="meta">LangChain</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/langchain-ai/langchain/commit/c5e59cb" target="_blank" rel="noopener">[langchain-ai/langchain] chore(deps): bump opentelemetry-api from 1.45.1 to 1.45.2 in /libs/langchain_v1 (#41845)</a>
+        <span class="time">2026-11-14 00:33</span>
+    </div>
+    <div class="meta">LangChain</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/langchain-ai/langchain/commit/92bb9d8" target="_blank" rel="noopener">[langchain-ai/langchain] chore(deps): bump opentelemetry-api from 1.45.1 to 1.45.2 in /libs/langchain (#41846)</a>
+        <span class="time">2026-11-14 00:33</span>
+    </div>
+    <div class="meta">LangChain</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/langchain-ai/langchain/commit/b9119e1" target="_blank" rel="noopener">[langchain-ai/langchain] chore(deps): bump soupsieve from 2.9 to 4.0 in /libs/langchain (#41847)</a>
+        <span class="time">2026-11-14 00:33</span>
+    </div>
+    <div class="meta">LangChain</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/langchain-ai/langchain/commit/30932af" target="_blank" rel="noopener">[langchain-ai/langchain] chore(deps): bump dnspython from 2.9.1 to 2.9.2 in /libs/langchain_v1 (#41849)</a>
+        <span class="time">2026-11-14 00:33</span>
+    </div>
+    <div class="meta">LangChain</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/langchain-ai/langchain/commit/249f1f0" target="_blank" rel="noopener">[langchain-ai/langchain] chore(deps): bump soupsieve from 4.0 to 4.1 in /libs/core (#41850)</a>
+        <span class="time">2026-11-14 00:33</span>
+    </div>
+    <div class="meta">LangChain</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/ollama/ollama/commit/a5864fc" target="_blank" rel="noopener">[ollama/ollama] api: preserve unmodeled tool schema keywords (#19686)</a>
+        <span class="time">2026-11-14 00:00</span>
+    </div>
+    <div class="meta">Ollama</div>
+    
+</div></div>
+</div><div class="section">
+    <h2>🔥 GitHub Trending <span class="count">10</span></h2>
+    <div class="items"><div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/alibaba/open-code-review" target="_blank" rel="noopener">alibaba/open-code-review (Go)</a>
+        <span class="time">2026-11-14 04:06</span>
+    </div>
+    <div class="meta">alibaba/open-code-review</div>
+    <p class="desc">Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/GoogleChrome/modern-web-guidance-src" target="_blank" rel="noopener">GoogleChrome/modern-web-guidance-src (TypeScript)</a>
+        <span class="time">2026-11-14 04:06</span>
+    </div>
+    <div class="meta">GoogleChrome/modern-web-guidance-src</div>
+    <p class="desc">Keep your coding agent up to date with the latest web best practices</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/openai/codex-security" target="_blank" rel="noopener">openai/codex-security (TypeScript)</a>
+        <span class="time">2026-11-14 04:06</span>
+    </div>
+    <div class="meta">openai/codex-security</div>
+    <p class="desc">OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm:https://www.npmjs.com/package/@openai/codex-security</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/ZhuLinsen/daily_stock_analysis" target="_blank" rel="noopener">ZhuLinsen/daily_stock_analysis (Python)</a>
+        <span class="time">2026-11-14 04:06</span>
+    </div>
+    <div class="meta">ZhuLinsen/daily_stock_analysis</div>
+    <p class="desc">LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/we-promise/sure" target="_blank" rel="noopener">we-promise/sure (Ruby)</a>
+        <span class="time">2026-11-14 04:06</span>
+    </div>
+    <div class="meta">we-promise/sure</div>
+    <p class="desc">The personal finance app for everyone (by everyone)</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/backnotprop/plannotator" target="_blank" rel="noopener">backnotprop/plannotator (TypeScript)</a>
+        <span class="time">2026-11-14 04:06</span>
+    </div>
+    <div class="meta">backnotprop/plannotator</div>
+    <p class="desc">The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/louislam/uptime-kuma" target="_blank" rel="noopener">louislam/uptime-kuma (JavaScript)</a>
+        <span class="time">2026-11-14 04:06</span>
+    </div>
+    <div class="meta">louislam/uptime-kuma</div>
+    <p class="desc">A fancy self-hosted monitoring tool</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/block/buzz" target="_blank" rel="noopener">block/buzz (Rust)</a>
+        <span class="time">2026-11-14 04:06</span>
+    </div>
+    <div class="meta">block/buzz</div>
+    <p class="desc">A hive mind communication platform</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/tradermonty/claude-trading-skills" target="_blank" rel="noopener">tradermonty/claude-trading-skills (Python)</a>
+        <span class="time">2026-11-14 04:06</span>
+    </div>
+    <div class="meta">tradermonty/claude-trading-skills</div>
+    <p class="desc">Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/tailscale/tailcat" target="_blank" rel="noopener">tailscale/tailcat (Go)</a>
+        <span class="time">2026-11-14 04:06</span>
+    </div>
+    <div class="meta">tailscale/tailcat</div>
+    <p class="desc">like netcat, but over Tailscale's data plane, without Tailscale's control plane</p>
+</div></div>
+</div>
+
+  <div class="footer">
+    <a href="https://czlab.com" target="_blank">村长实验室 czlab.com</a>
+    · <a href="https://cunzhangblog.com" target="_blank">村长博客 cunzhangblog.com</a>
+    <br>
+    Generated by <a href="https://github.com/cunzhang/CunRadar" target="_blank">CunRadar</a>
+    · 2026-11-14 12:06:00
+  </div>
+</div>
+</body>
+</html>
