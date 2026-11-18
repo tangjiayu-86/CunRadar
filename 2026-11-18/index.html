@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CunRadar Daily - 你的个人互联网信息雷达，AI 自动追踪 YouTube、B站、博客和 GitHub 更新。">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<title>CunRadar Daily - 2026-11-18</title>
+<style>
+  :root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --border: #334155;
+    --fg: #e2e8f0;
+    --fg-dim: #94a3b8;
+    --accent: #38bdf8;
+    --accent-glow: rgba(56, 189, 248, 0.15);
+    --green: #4ade80;
+    --yellow: #fbbf24;
+    --radius: 12px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 "Noto Sans SC", sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  .container { max-width: 800px; margin: 0 auto; padding: 24px 16px; }
+  .header {
+    text-align: center;
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 32px;
+  }
+  .header .logo {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .header .date {
+    color: var(--fg-dim);
+    font-size: 1.1rem;
+    margin-top: 8px;
+  }
+  .header .summary {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: var(--fg-dim);
+  }
+  .header .summary span { color: var(--accent); font-weight: 600; }
+  .section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 20px;
+  }
+  .section h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section h2 .count {
+    display: inline-block;
+    background: var(--accent-glow);
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 1px 10px;
+    border-radius: 20px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .empty-state {
+    text-align: center;
+    color: var(--fg-dim);
+    font-size: 0.9rem;
+    padding: 24px 0;
+  }
+  .item {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+  }
+  .item:last-child { border-bottom: none; }
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .item-title {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  .item-title:hover { text-decoration: underline; }
+  .time {
+    color: var(--fg-dim);
+    font-size: 0.8rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .meta {
+    color: var(--fg-dim);
+    font-size: 0.8rem;
+    margin-top: 4px;
+  }
+  .desc {
+    color: var(--fg-dim);
+    font-size: 0.85rem;
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+  .digest {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 20px;
+    line-height: 1.8;
+  }
+  .digest h2, .digest h3 {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    color: var(--yellow);
+  }
+  .digest h2:first-child, .digest h3:first-child { margin-top: 0; }
+  .digest p { margin-bottom: 8px; color: var(--fg); }
+  .digest li {
+    margin-left: 20px;
+    margin-bottom: 4px;
+    color: var(--fg);
+  }
+  .footer {
+    text-align: center;
+    color: var(--fg-dim);
+    font-size: 0.8rem;
+    padding: 32px 0;
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+  }
+  .footer a { color: var(--accent); text-decoration: none; }
+  @media (max-width: 600px) {
+    .container { padding: 16px 12px; }
+    .header { padding: 32px 0 24px; }
+    .header h1 { font-size: 1.5rem; }
+    .section { padding: 16px; }
+    .item-header { flex-direction: column; gap: 4px; }
+    .time { white-space: normal; }
+    .header .summary { flex-wrap: wrap; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>📡 CunRadar Daily</h1>
+    <div class="date">2026-11-18  13:11</div>
+    <div class="summary">
+      <span>27</span> 条更新 · <span>4</span> 个来源
+    </div>
+  </div>
+
+  
+
+  <div class="section">
+    <h2>🎬 YouTube <span class="count">1</span></h2>
+    <div class="items"><div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.youtube.com/watch?v=gl2U4fGTr6g" target="_blank" rel="noopener">OpenAI's New Breakthrough Is... Utter Chaos</a>
+        <span class="time">2026-11-17 12:46</span>
+    </div>
+    <div class="meta">Two Minute Papers</div>
+    <p class="desc">❤️ Check out Lambda here and sign up for their GPU Cloud: https://lambda.com/papers
+
+📝 The paper is available here:
+https://www.kitp.ucsb.edu/sites/default/files/YM_working_group.pdf
+https://openai.com/index/building-scientific-understanding-with-academic-communities/
+
+🙏 We would like to thank our g</p>
+</div></div>
+</div><div class="section">
+    <h2>📺 B站</h2>
+    <div class="empty-state">无新内容</div>
+</div><div class="section">
+    <h2>📝 博客 & RSS <span class="count">6</span></h2>
+    <div class="items"><div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.qbitai.com/2026/11/510737.html" target="_blank" rel="noopener">潜伏小红书48h：AI时代，顶尖技术人才都在聊什么？</a>
+        <span class="time">2026-11-18 02:49</span>
+    </div>
+    <div class="meta">量子位</div>
+    <p class="desc">小红书校招沙龙，一群技术高手认真对待年轻人的野心</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.qbitai.com/2026/11/510726.html" target="_blank" rel="noopener">黄仁勋不再沉默：我愿重掌英伟达！董事会：不考虑</a>
+        <span class="time">2026-11-18 01:03</span>
+    </div>
+    <div class="meta">量子位</div>
+    <p class="desc">英伟达公布了老黄离职后的首份财报</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.qbitai.com/2026/11/510707.html" target="_blank" rel="noopener">GPT-6.2 Astra和Sol王炸双发！3D又危了</a>
+        <span class="time">2026-11-18 00:49</span>
+    </div>
+    <div class="meta">量子位</div>
+    <p class="desc">Sol逼近旗舰性能</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.qbitai.com/2026/11/510695.html" target="_blank" rel="noopener">并购完成，李飞飞正式率队加入AMD！苏妈亲自欢迎</a>
+        <span class="time">2026-11-17 14:15</span>
+    </div>
+    <div class="meta">量子位</div>
+    <p class="desc">82亿美元股票，46天闪电交割</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.qbitai.com/2026/11/510688.html" target="_blank" rel="noopener">李沐加盟的Aimotion，是一家什么AI公司？</a>
+        <span class="time">2026-11-17 11:40</span>
+    </div>
+    <div class="meta">量子位</div>
+    <p class="desc">瞄准「产业级世界模型」</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://www.qbitai.com/2026/11/510652.html" target="_blank" rel="noopener">材料科学智能体MatOS正式开源！大幅提高材料研发任务成功率</a>
+        <span class="time">2026-11-17 06:09</span>
+    </div>
+    <div class="meta">量子位</div>
+    <p class="desc">筛材料、找配方、开发新模型…拿下多项科研任务</p>
+</div></div>
+</div><div class="section">
+    <h2>💻 GitHub 项目 <span class="count">10</span></h2>
+    <div class="items"><div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/langchain-ai/langchain/commit/582565e" target="_blank" rel="noopener">[langchain-ai/langchain] feat(openai): support GPT-6.2 Astra and Sol (#41922)</a>
+        <span class="time">2026-11-17 22:52</span>
+    </div>
+    <div class="meta">LangChain</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/langchain-ai/langchain/commit/5069b32" target="_blank" rel="noopener">[langchain-ai/langchain] feat(deepseek): send `langsmith_gateway` headers from the client (#41905)</a>
+        <span class="time">2026-11-17 22:33</span>
+    </div>
+    <div class="meta">LangChain</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/langchain-ai/langchain/commit/8471b55" target="_blank" rel="noopener">[langchain-ai/langchain] feat(xai): send `langsmith_gateway` headers from the client (#41904)</a>
+        <span class="time">2026-11-17 22:33</span>
+    </div>
+    <div class="meta">LangChain</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/langchain-ai/langchain/commit/ba97c10" target="_blank" rel="noopener">[langchain-ai/langchain] feat(groq): send `langsmith_gateway` headers from the client (#41903)</a>
+        <span class="time">2026-11-17 22:33</span>
+    </div>
+    <div class="meta">LangChain</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/langchain-ai/langchain/commit/30b56e7" target="_blank" rel="noopener">[langchain-ai/langchain] feat(anthropic): send `langsmith_gateway` headers from the client (#41902)</a>
+        <span class="time">2026-11-17 22:33</span>
+    </div>
+    <div class="meta">LangChain</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/langchain-ai/langchain/commit/065240d" target="_blank" rel="noopener">[langchain-ai/langchain] feat(openai): send `langsmith_gateway` headers from the client (#41901)</a>
+        <span class="time">2026-11-17 22:33</span>
+    </div>
+    <div class="meta">LangChain</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/langchain-ai/langchain/commit/188cd2d" target="_blank" rel="noopener">[langchain-ai/langchain] feat(core): add `headers` to `langsmith_gateway` and ignore proxies (#41900)</a>
+        <span class="time">2026-11-17 22:33</span>
+    </div>
+    <div class="meta">LangChain</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/langchain-ai/langchain/commit/6f2bf1c" target="_blank" rel="noopener">[langchain-ai/langchain] release(openai): 1.8.1 (#41924)</a>
+        <span class="time">2026-11-17 20:30</span>
+    </div>
+    <div class="meta">LangChain</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/langchain-ai/langchain/commit/2403929" target="_blank" rel="noopener">[langchain-ai/langchain] fix(openai): recover function call args from done events (#41923)</a>
+        <span class="time">2026-11-17 20:13</span>
+    </div>
+    <div class="meta">LangChain</div>
+    
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/langchain-ai/langchain/commit/c899f63" target="_blank" rel="noopener">[langchain-ai/langchain] feat(anthropic): support Claude Fable and Mythos 5.2 (#41770)</a>
+        <span class="time">2026-11-17 19:51</span>
+    </div>
+    <div class="meta">LangChain</div>
+    
+</div></div>
+</div><div class="section">
+    <h2>🔥 GitHub Trending <span class="count">10</span></h2>
+    <div class="items"><div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/elementalsouls/Claude-BugHunter" target="_blank" rel="noopener">elementalsouls/Claude-BugHunter (Python)</a>
+        <span class="time">2026-11-18 05:11</span>
+    </div>
+    <div class="meta">elementalsouls/Claude-BugHunter</div>
+    <p class="desc">A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/mvanhorn/last30days-skill" target="_blank" rel="noopener">mvanhorn/last30days-skill (Python)</a>
+        <span class="time">2026-11-18 05:11</span>
+    </div>
+    <div class="meta">mvanhorn/last30days-skill</div>
+    <p class="desc">AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/alibaba/open-code-review" target="_blank" rel="noopener">alibaba/open-code-review (Go)</a>
+        <span class="time">2026-11-18 05:11</span>
+    </div>
+    <div class="meta">alibaba/open-code-review</div>
+    <p class="desc">Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/Tencent/LoopForge" target="_blank" rel="noopener">Tencent/LoopForge (Go)</a>
+        <span class="time">2026-11-18 05:11</span>
+    </div>
+    <div class="meta">Tencent/LoopForge</div>
+    <p class="desc">Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/dream-num/univer" target="_blank" rel="noopener">dream-num/univer (TypeScript)</a>
+        <span class="time">2026-11-18 05:11</span>
+    </div>
+    <div class="meta">dream-num/univer</div>
+    <p class="desc">Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/getarcaneapp/arcane" target="_blank" rel="noopener">getarcaneapp/arcane (Go)</a>
+        <span class="time">2026-11-18 05:11</span>
+    </div>
+    <div class="meta">getarcaneapp/arcane</div>
+    <p class="desc">Modern Docker Management, Designed for Everyone</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/google-labs-code/stitch-skills" target="_blank" rel="noopener">google-labs-code/stitch-skills (TypeScript)</a>
+        <span class="time">2026-11-18 05:11</span>
+    </div>
+    <div class="meta">google-labs-code/stitch-skills</div>
+    <p class="desc">A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/cursor/plugins" target="_blank" rel="noopener">cursor/plugins (TypeScript)</a>
+        <span class="time">2026-11-18 05:11</span>
+    </div>
+    <div class="meta">cursor/plugins</div>
+    <p class="desc">Cursor plugin specification and official plugins</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/obra/superpowers" target="_blank" rel="noopener">obra/superpowers (Shell)</a>
+        <span class="time">2026-11-18 05:11</span>
+    </div>
+    <div class="meta">obra/superpowers</div>
+    <p class="desc">An agentic skills framework & software development methodology that works.</p>
+</div>
+<div class="item">
+    <div class="item-header">
+        <a class="item-title" href="https://github.com/ag-ui-protocol/ag-ui" target="_blank" rel="noopener">ag-ui-protocol/ag-ui (TypeScript)</a>
+        <span class="time">2026-11-18 05:11</span>
+    </div>
+    <div class="meta">ag-ui-protocol/ag-ui</div>
+    <p class="desc">AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.</p>
+</div></div>
+</div>
+
+  <div class="footer">
+    <a href="https://czlab.com" target="_blank">村长实验室 czlab.com</a>
+    · <a href="https://cunzhangblog.com" target="_blank">村长博客 cunzhangblog.com</a>
+    <br>
+    Generated by <a href="https://github.com/cunzhang/CunRadar" target="_blank">CunRadar</a>
+    · 2026-11-18 13:11:31
+  </div>
+</div>
+</body>
+</html>
